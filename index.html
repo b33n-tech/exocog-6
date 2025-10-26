@@ -6,43 +6,40 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Outil Tâches + Modules</h1>
-  <select id="llmSelect">
-    <option value="https://chat.openai.com/">GPT</option>
-    <option value="https://www.perplexity.ai/">Perplexity</option>
-    <option value="https://www.anthropic.com/claude">Claude</option>
-    <option value="https://www.mistral.ai/">Mistral</option>
-  </select>
-</header>
+  <header>
+    <h1>Outil de Gestion de Tâches & Modules</h1>
+    <label for="llmSelect">Choisir LLM :</label>
+    <select id="llmSelect">
+      <option value="https://chat.openai.com/">ChatGPT</option>
+      <option value="https://perplexity.ai/">Perplexity</option>
+      <option value="https://www.anthropic.com/claude">Claude</option>
+      <option value="https://www.mistral.ai/">Mistral</option>
+    </select>
+  </header>
 
-<main>
-  <div class="section" id="stack1">
-    <h2>Input tâches</h2>
-    <div>
-      <input type="text" id="taskInput" placeholder="Nouvelle tâche…">
-      <button id="addBtn">Ajouter</button>
-    </div>
-    <div class="buttons-row">
-      <button id="clearBtn">🧹 Tout nettoyer</button>
-      <button id="archiveBtn">📂 Archiver JSON</button>
-    </div>
+  <section id="stack1">
+    <h2>Input Tâches</h2>
+    <input id="taskInput" placeholder="Nouvelle tâche…">
+    <button id="addBtn">Ajouter</button>
     <ul id="tasksContainer"></ul>
+    <div class="buttons-row"></div>
 
-    <h3>Prompts</h3>
-    <div id="promptsContainer"></div>
+    <h3>JSON Paste/Load</h3>
+    <textarea id="jsonPaste" placeholder="Colle ici le JSON…"></textarea>
+    <button id="pushToModulesBtn">Envoyer vers Modules</button>
+  </section>
 
-    <h3>Coller JSON depuis LLM</h3>
-    <textarea id="jsonPaste" rows="5" style="width:100%;"></textarea>
-    <button id="sendToModulesBtn">Envoyer ce batch → Modules</button>
-  </div>
-
-  <div class="section" id="stack2">
-    <h2>Modules Actionables</h2>
+  <section id="stack2">
+    <h2>Modules</h2>
     <div id="modulesContainer"></div>
-  </div>
-</main>
+  </section>
 
-<script src="script.js"></script>
+  <section id="promptsSection">
+    <h2>Prompts Tâches</h2>
+    <div id="promptsContainer"></div>
+    <div id="copiedMsg" style="display:none;color:green;">✅ Copié et LLM ouvert !</div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
