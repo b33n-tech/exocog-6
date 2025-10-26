@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Outil Tâches + Modules</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Outil Tâches + Modules</h1>
+  <select id="llmSelect">
+    <option value="https://chat.openai.com/">GPT</option>
+    <option value="https://www.perplexity.ai/">Perplexity</option>
+    <option value="https://www.anthropic.com/claude">Claude</option>
+    <option value="https://www.mistral.ai/">Mistral</option>
+  </select>
+</header>
 
+<main>
+  <div class="section" id="stack1">
+    <h2>Input tâches</h2>
+    <div>
+      <input type="text" id="taskInput" placeholder="Nouvelle tâche…">
+      <button id="addBtn">Ajouter</button>
+    </div>
+    <div class="buttons-row">
+      <button id="clearBtn">🧹 Tout nettoyer</button>
+      <button id="archiveBtn">📂 Archiver JSON</button>
+    </div>
+    <ul id="tasksContainer"></ul>
+
+    <h3>Prompts</h3>
+    <div id="promptsContainer"></div>
+
+    <h3>Coller JSON depuis LLM</h3>
+    <textarea id="jsonPaste" rows="5" style="width:100%;"></textarea>
+    <button id="sendToModulesBtn">Envoyer ce batch → Modules</button>
+  </div>
+
+  <div class="section" id="stack2">
+    <h2>Modules Actionables</h2>
+    <div id="modulesContainer"></div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
